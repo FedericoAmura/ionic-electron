@@ -1,0 +1,8 @@
+{
+  "name": "ion-electron",
+  "app_id": "d2eab6b9",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
