@@ -1,15 +1,33 @@
 {
   "name": "ion-electron",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "http://ionicframework.com/",
+  "author": {
+    "name": "Federico L. Amura",
+    "mail": "federicoamura@gmail.com"
+  },
+  "description": "A spike for building an electron app with ionic",
+  "main": "electron/electron.js",
+  "config": {
+    "ionic_bundler": "webpack",
+    "ionic_webpack": "./config/webpack.config.js"
+  },
+  "build": {
+    "appId": "com.famura.ionic-electron-spike",
+    "asar": false,
+    "files": [
+      "www/**/*",
+      "electron/*"
+    ]
+  },
   "private": true,
   "scripts": {
+    "dev": "nf start",
     "clean": "ionic-app-scripts clean",
     "build": "ionic-app-scripts build",
     "lint": "ionic-app-scripts lint",
-    "ionic:build": "ionic-app-scripts build",
-    "ionic:serve": "ionic-app-scripts serve"
+    "ionic:serve": "ionic-app-scripts serve",
+    "electron dist": "electron .",
+    "ebuild": "npm run build && node_modules/.bin/build"
   },
   "dependencies": {
     "@angular/common": "5.0.3",
@@ -33,7 +51,9 @@
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.8",
+    "electron": "^1.7.10",
+    "electron-builder": "^19.54.0",
+    "foreman": "^2.0.0",
     "typescript": "2.4.2"
-  },
-  "description": "An Ionic project"
+  }
 }
