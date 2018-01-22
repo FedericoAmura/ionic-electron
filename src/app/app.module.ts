@@ -12,6 +12,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { Pro } from '@ionic/pro';
+import { ElectronProvider } from '../providers/electron/electron';
 
 const IonicPro = Pro.init('d2eab6b9', { //the app id from ionic dashboard
   appVersion: "0.0.1" //follow this from package.json
@@ -40,7 +41,8 @@ const IonicPro = Pro.init('d2eab6b9', { //the app id from ionic dashboard
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    ElectronProvider
   ]
 })
 export class AppModule {}
